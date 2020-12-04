@@ -34,7 +34,7 @@ public class ThreadedLogic implements Runnable {
 
     private void heavyComputation() {
         try {
-            Thread.sleep(2000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

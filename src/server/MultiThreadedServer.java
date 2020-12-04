@@ -12,7 +12,6 @@ public class MultiThreadedServer {
     private ServerSocket serverSocket = null;
     ArrayList<ThreadedLogic> sessions = new ArrayList<>();
 
-
     public MultiThreadedServer(int port) {
         this.port = port;
 
@@ -49,16 +48,13 @@ public class MultiThreadedServer {
 
     public void stop() {
         try {
-
             for (ThreadedLogic s: sessions) {
                 s.getSocket().close();
                 System.out.println("Закрыт клиентский сокет на стороне сервера\n");
             }
 
             serverSocket.close();
-
             listen = false;
-
             System.out.println("Закрыт серверный сокет (ServerSocket)");
         } catch (IOException e) {
             e.printStackTrace();
