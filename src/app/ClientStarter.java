@@ -21,8 +21,8 @@ public class ClientStarter {
         Client client = new Client();
 
         for (int i = 0; i < 100; i++){
-            client.launch(7070);
             System.out.println("Клиент " + i + " делает запрос");
+            client.launch(7070);
         }
     }
 }

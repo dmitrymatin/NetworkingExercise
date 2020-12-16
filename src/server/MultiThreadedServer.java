@@ -28,7 +28,7 @@ public class MultiThreadedServer {
         try {
             while (listen) {
                 Socket socket = serverSocket.accept();
-                System.out.println("В цикле ServerSocket ожидает входящие запросы от клиентов на порт " + port);
+                System.out.println("\nВ цикле ServerSocket ожидает входящие запросы от клиентов на порт " + port);
 
                 ThreadedLogic threadedLogic = new ThreadedLogic(socket);
                 sessions.add(threadedLogic);
@@ -36,7 +36,7 @@ public class MultiThreadedServer {
 
                 Thread thread = new Thread(threadedLogic);
                 thread.start();
-                System.out.println("Сервер создал новый потокчё");
+                System.out.println("Сервер создал новый поток");
             }
             
 
