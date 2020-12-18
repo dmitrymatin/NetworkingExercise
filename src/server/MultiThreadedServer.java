@@ -31,12 +31,13 @@ public class MultiThreadedServer {
                 System.out.println("\nВ цикле ServerSocket ожидает входящие запросы от клиентов на порт " + port);
 
                 ThreadedLogic threadedLogic = new ThreadedLogic(socket);
-                sessions.add(threadedLogic);
                 System.out.println("Создан экземпляр класса ThreadedLogic");
 
                 Thread thread = new Thread(threadedLogic);
                 thread.start();
                 System.out.println("Сервер создал новый поток");
+
+                sessions.add(threadedLogic);
             }
             
 
